@@ -4,11 +4,11 @@ This package consumes the events from the Kafka topic, which were previously pro
 
 1. **Data Storage**: The package saves the consumed data into the database. It efficiently stores the relevant events, ensuring seamless access to the data for further processing.
 
-2. **Endpoint Exposition**: The Consumer exposes endpoints to clients, enabling them to retrieve the stored data from the database. These endpoints provide a convenient and structured way for clients to access the indexed blockchain data related to MATIC token transfers.
+2. **Endpoint Exposition**: The Consumer exposes endpoints to clients, enabling them to retrieve the stored data from the database. These endpoints provide a convenient and structured way for clients to access the indexed blockchain data related to token transfers.
 
 ## How to Use
 
-Note: Make sure you are inside the examples/matic_transfer/consumer folder.
+Note: Make sure you are inside the examples/token_transfer/consumer folder.
 
 ### 1. Set Configuration
 

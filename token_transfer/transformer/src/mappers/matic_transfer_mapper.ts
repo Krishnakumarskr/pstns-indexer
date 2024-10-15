@@ -6,7 +6,7 @@ import utils from "web3-utils";
 import IMaticTransferTx from "../interfaces/matic_transfer_tx.js";
 
 /**
- * Matic Transfer Mapper maps a given transaction to MATIC token transfer events if exisiting
+ * Matic Transfer Mapper maps a given transaction to MATIC token transfer events if existing
  * in the transaction
  *
  * @author - Nitin Mittal, Polygon Technology
@@ -14,6 +14,9 @@ import IMaticTransferTx from "../interfaces/matic_transfer_tx.js";
 export class MaticTransferMapper
   implements IMapper<ITransaction, IMaticTransferTx>
 {
+  private ERC20_TOKEN_ADDRESS =
+    process.env.ERC20_TOKEN_ADDRESS?.toLowerCase() || "";
+
   /**
    * Maps the given transaction receipt object to IMaticTransfer Txs
    *
@@ -47,10 +50,8 @@ export class MaticTransferMapper
     for (const log of transaction.receipt.logs) {
       if (
         log.topics.length &&
-        // Check if event was emitted by MATIC Token Contract
-        // log.address.toLowerCase() === "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0".toLowerCase()
-        log.address.toLowerCase() ===
-          "0xc2132D05D31c914a87C6611C10748AEb04B58e8F".toLowerCase()
+        // Check if the event was emitted by the MATIC Token Contract using the env variable
+        log.address.toLowerCase() === this.ERC20_TOKEN_ADDRESS
       ) {
         transfers.push({
           transactionIndex: transaction.receipt.transactionIndex,
@@ -71,7 +72,7 @@ export class MaticTransferMapper
    * @private
    * Returns true if a transfer event exists in the logsBloom provided.
    *
-   * @param {string} logsBloom - The logsbloom string to perform the check on.
+   * @param {string} logsBloom - The logsBloom string to perform the check on.
    *
    * @returns {boolean} - true if transfer exists, false otherwise.
    */
