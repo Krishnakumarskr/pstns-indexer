@@ -1,4 +1,4 @@
-# MATIC_TRANSFER
+# TOKEN_TRANSFER
 
 Token-transfer is an exemplary project that showcases the usage of Chain Indexer Framework to index a particular ERC-20 token transfers occurring on the Ethereum blockchain.
 
