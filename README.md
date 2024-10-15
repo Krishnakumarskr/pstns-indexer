@@ -2,6 +2,11 @@
 
 Token-transfer is an exemplary project that showcases the usage of Chain Indexer Framework to index a particular ERC-20 token transfers occurring on the Ethereum blockchain.
 
+## Flow
+
+![image](https://github.com/user-attachments/assets/0899926f-df01-444d-855c-cae842e1a9ce)
+
+
 ## Overview
 
 The folder consists of a high level example consisting of three distinct packages, each serving a specific function:
