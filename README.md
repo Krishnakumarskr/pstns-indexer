@@ -73,4 +73,4 @@ Ensure that MongoDB is installed and its service is running. Follow these steps 
 
 **Step 3: Build and Run Services**
 
-- Run [MATIC_TRANSFER](./token_transfer/README.md)
+- Run [TOKEN_TRANSFER](./token_transfer/README.md)
